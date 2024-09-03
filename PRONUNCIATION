@@ -1,0 +1,155 @@
+from docx import Document
+
+
+
+# Create a new Document
+
+doc = Document()
+
+doc.add_heading('50 Common Words with Phonetics, Stress and Syllables', 0)
+
+
+
+# Add table with 3 columns
+
+table = doc.add_table(rows=1, cols=3)
+
+hdr_cells = table.rows[0].cells
+
+hdr_cells[0].text = 'Word'
+
+hdr_cells[1].text = 'Phonetic'
+
+hdr_cells[2].text = 'Syllables'
+
+
+
+# List of 50 common words with phonetics and syllables
+
+words_phonetics_syllables = [
+
+    ("Apple", "/ˈæp.əl/", "* *"),
+
+    ("Banana", "/bəˈnæn.ə/", "* * *"),
+
+    ("Carrot", "/ˈkær.ət/", "* *"),
+
+    ("Dog", "/dɔːɡ/", "*"),
+
+    ("Elephant", "/ˈel.ə.fənt/", "* * *"),
+
+    ("Flower", "/ˈflaʊ.ər/", "* *"),
+
+    ("Giraffe", "/dʒɪˈræf/", "* *"),
+
+    ("House", "/haʊs/", "*"),
+
+    ("Ice cream", "/ˈaɪs.kriːm/", "* *"),
+
+    ("Jacket", "/ˈdʒæk.ɪt/", "* *"),
+
+    ("Kangaroo", "/ˌkæŋ.ɡəˈruː/", "* * *"),
+
+    ("Lemon", "/ˈlɛm.ən/", "* *"),
+
+    ("Monkey", "/ˈmʌŋ.ki/", "* *"),
+
+    ("Notebook", "/ˈnoʊt.bʊk/", "* *"),
+
+    ("Orange", "/ˈɔːr.ɪndʒ/", "* *"),
+
+    ("Pizza", "/ˈpiːt.sə/", "* *"),
+
+    ("Queen", "/kwiːn/", "*"),
+
+    ("Robot", "/ˈroʊ.bɒt/", "* *"),
+
+    ("Snake", "/sneɪk/", "*"),
+
+    ("Tiger", "/ˈtaɪ.ɡər/", "* *"),
+
+    ("Umbrella", "/ʌmˈbrel.ə/", "* * *"),
+
+    ("Violin", "/ˌvaɪəˈlɪn/", "* * *"),
+
+    ("Window", "/ˈwɪn.doʊ/", "* *"),
+
+    ("Xylophone", "/ˈzaɪ.lə.foʊn/", "* * *"),
+
+    ("Yellow", "/ˈjɛl.oʊ/", "* *"),
+
+    ("Zebra", "/ˈziː.brə/", "* *"),
+
+    ("Table", "/ˈteɪ.bl̩/", "* *"),
+
+    ("Chair", "/tʃɛr/", "*"),
+
+    ("Book", "/bʊk/", "*"),
+
+    ("Telephone", "/ˈtɛl.ɪ.foʊn/", "* * *"),
+
+    ("Music", "/ˈmjuː.zɪk/", "* *"),
+
+    ("Computer", "/kəmˈpjuː.tər/", "* * *"),
+
+    ("Camera", "/ˈkæm.rə/", "* *"),
+
+    ("Television", "/ˈtɛl.əˌvɪʒ.ən/", "* * * *"),
+
+    ("Pencil", "/ˈpɛn.sɪl/", "* *"),
+
+    ("Ball", "/bɔːl/", "*"),
+
+    ("Sun", "/sʌn/", "*"),
+
+    ("Moon", "/muːn/", "*"),
+
+    ("Star", "/stɑːr/", "*"),
+
+    ("Water", "/ˈwɔː.tər/", "* *"),
+
+    ("Fire", "/faɪr/", "*"),
+
+    ("Mountain", "/ˈmaʊn.tən/", "* *"),
+
+    ("River", "/ˈrɪv.ər/", "* *"),
+
+    ("Ocean", "/ˈoʊ.ʃən/", "* *"),
+
+    ("Earth", "/ɜːrθ/", "*"),
+
+    ("Planet", "/ˈplæn.ɪt/", "* *"),
+
+    ("Galaxy", "/ˈɡæl.ək.si/", "* * *"),
+
+    ("Universe", "/ˈjuː.nɪ.vɜːrs/", "* * *"),
+
+    ("Rocket", "/ˈrɒk.ɪt/", "* *")
+
+]
+
+
+
+# Add rows to the table
+
+for word, phonetic, syllables in words_phonetics_syllables:
+
+    row_cells = table.add_row().cells
+
+    row_cells[0].text = word
+
+    row_cells[1].text = phonetic
+
+    row_cells[2].text = syllables
+
+
+
+# Save the document
+
+output_docx_path = "/mnt/data/50_common_words_with_phonetics.docx"
+
+doc.save(output_docx_path)
+
+
+
+output_docx_path
